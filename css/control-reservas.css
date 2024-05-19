@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Actor&display=swap');
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{ 
+    font-family: 'Actor', sans-serif;
+    background: #16181B;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-areas: 
+    "menu-lateral contenedor-madre";
+    
+}
+
+.contenedor-madre{
+  grid-area: contenedor-madre;
+} 
+.contenedor-madre{
+    display: grid;
+    grid-template-areas:
+    "buscador"
+    "contenedor-informacion";
+    width: 100%;
+    gap: 20px 10px;
+   padding-top:120px ;
+   padding-left: 60px;
+}
+.buscador{
+    grid-area: buscador;
+    width: 100%;
+    display: flex;
+    flex-direction:row-reverse ;
+    align-content: flex-end;
+    padding-right: 10px;
+}
+.buscador .cont-input{
+    background-color: #1F2125;
+    width:30% ;
+    display: flex;
+    border: none; 
+    border:solid 1px #FF9100;
+    border-radius: 3px;
+    font-size: 15px;
+ 
+}
+.buscador input{
+    background-color: #1F2125;
+    border:#FF9100 ;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+.contenedor-table{
+    grid-area: contenedor-informacion;
+    width: 100%;
+    background-color:#1F2125 ;
+    height: 100vh;
+}
+.contenedor-informacion .tabla{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+/*---------------ESTILO DE LA TABLA--------------*/
+    .contenedor-table{
+        width: 90%;
+        margin: 50px auto;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 30px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    .table-title{
+        grid-column-start: 1;
+        grid-column-end: 2;/* Se coloca 5 porque empieza en la 1 y termina en la 5ta fila y no enla 4ta */
+        color: #FF9100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 1.8em;
+        padding-bottom: 20px;
+        
+    }
+    .table-header, .table-item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .contenedor-header{
+        width: 100%;
+        background:  #111111bd;
+        color: #fff;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-rows: 30px;
+
+    }
+    .table-header{
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+    .contenedor-item{
+        color: #fff;
+        width: 100%;
+        background: #111111bd;
+        border-top:#fff 1px solid ;
+        border-bottom: #fff 1px solid;
+        border-right: #fff 1px solid;
+        cursor: pointer;
+        
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-rows: 30px;
+    }
+    .contenedor-item:hover{
+        background-color: #FF9100;
+        color: #1F2125;
+        font-weight: bold;
+    }
+    .table-item{
+        font-size: 1.2em;
+        padding: 10px;
+        text-align: justify;
+        border-left: #fff 1px solid;
+    }
+    .contenedor-info{
+        color: #fff;
+        font-size:1.2em ;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        border:#fff 1px solid ;
+       
+    }
+    /*--------------------modal-------------*/

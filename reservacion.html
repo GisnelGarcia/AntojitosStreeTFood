@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reservaciones.css">
+    <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="./css/menu-lateral-tlfn.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <style>
+        #loading{
+            float: right;
+            cursor: pointer;
+            display: none;
+        }
+        #ref:focus{
+            color: #fff;
+        }
+    </style>
+    <!------- CARGA DE INFORMACION DE FOMRA DINAMICA--------->
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script src="./js/datos.js"></script>
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function(e) {
+            $.ajax({
+                url: './libreria/Ajax.usuarios.php?num=5',
+                type: 'POST',
+                //data: "num=1",
+                cache: false,
+                contentType: false,
+                processData: false,
+                beforeSend: function(){
+                    $("#loading").show();
+                    //message = $("<div class='send_client'><img src='../../imagenes/load2.gif'></div>");
+                    //showMessage(message)
+                },
+                success: function(data){
+                    if(data == "no"){
+                        window.open("inicio-sesion.html", "_self");
+                    }else{
+                        $("body").show();
+                        var regreso = data.split(";")
+                        $("#cedula").val(regreso[0]);$("#cedulaf").text(regreso[0]);
+                        $("#nombre").val(regreso[1]);$("#nombref").text(regreso[1]);
+                        $("#apellido").val(regreso[2]);$("#apellidof").text(regreso[2]);
+                        $("#telefono").val(regreso[3]);$("#telefonof").text(regreso[3]);
+                        CargarSelects("horas_reserva");
+                        $("#horaR").text("06:00");
+                        $("#loading").hide();   
+                    }
+                },
+                error: function(){
+                    alert("error");
+                    //message = $("<span class='error'>Ha ocurrido un error.</span>");
+                }
+            });
+            $("#fecha").on("change", function(e){
+                if($(this).val() !=""){
+                    $(".imgadd").remove();
+                    $("#mesa").val("");
+                    BuscaMesa($(this).val(),$("#horas_reserva").find('option:selected').val());
+                    $("#fechaR").text($(this).val());
+                    $("#descargar").hide(1000);
+                }else{
+                    $("#fechaR").text("Seleccione fecha");
+                    $("#descargar").hide(1000);
+                }
+            })
+            $("#horas_reserva").on("change", function(e){
+                console.log($(this).find('option:selected').text());
+                $("#horaR").text($(this).find('option:selected').text());
+                BuscaMesa($("#fecha").val(),$(this).find('option:selected').val());
+                $(".imgadd").remove();
+                $("#mesa").val("");
+                $("#descargar").hide(1000);
+            });
+        });
+    </script>
+    <!-- FIN DE CARGA DE INFORMACION DE FORMA DINAMICA -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head> 
+<body style="display: none;">
+    <header class="encabezado">
+        <div class="header">
+            <div class="btn-menu">
+                <label for="btn-menu"> ☰ </label>
+            </div>
+            <div class="logo">
+                <h1> <img src="img/logo.png" ></h1>
+            </div>
+            <nav class="menu">
+                <div class="div-menu">
+                  
+                  <a href="https://www.instagram.com/antojitos.streetfood/?hl=es"> <img src="img/instagram.svg" > </a>
+                  <a href="https://api.whatsapp.com/send?phone=5804264930465&text=Holaaa!%20Antojitos%20"> <img src="img/ws.svg"> </a>
+                </div>
+            </nav>
+        </div>
+        
+    </header>
+    <!------------------------MENU LATERAL--------------------------------->
+    <div class="menu-lateral">
+       <a href="./index.html"> <img src="./img/Group 49 ini.png"></a> 
+       <a href="./menu.html"> <img src="./img/Group 46 559595mg menu.png"></a> 
+       <a href="./eventos.html"> <img src="./img/Group 47 event.png"></a> 
+       <a href="./contactos.html"> <img src="./img/Group 50 img cont.png"></a> 
+       <a href="./reservacion.html"> <img src="./img/Group 48  reserv.png"></a>
+    </div>
+
+    <!-----------------------MENU TELEFONOS ---------------------------------->
+    <div class="capa"></div>
+    <!------------------------------------->
+ <input class="check" type="checkbox" id="btn-menu">
+ <div class="container-menu">
+	<div class="cont-menu">
+		<nav>
+			<a href="./index.html"><img src="./img/Group 49 ini.png"></a>
+			<a href="./menu.html"><img src="./img/Group 46 559595mg menu.png"></a>
+			<a href="./eventos.html"><img src="./img/Group 47 event.png"></a>
+			<a href="./contactos.html"><img src="./img/Group 50 img cont.png"></a>
+            <a id ="reservar" href="./reservacion.html"> <img src="./img/Group 48  reserv.png"></a>
+		</nav>
+		<label for="btn-menu">✖️</label>
+	</div> 
+ </div> 
+ <!------------------------CONTENEDOR-MADRE------------------------------>
+ <div class="contenedor">
+        <div id=" datos-reservacion" class="datosreservation">
+            <div class="ingrese-datos">
+                <h2>Ingrese datos para la reservacion:</h2>
+            </div>
+         <div class="contenedor-datos">
+                <div class="datos1">
+                    <div class="cedula"><p>Cedula</p> <br> <br>
+                    <input type="text" id="cedula" readonly></div>
+                    <div class="nombre"><p>Nombre</p> <br> <br>
+                    <input type="text" id="nombre" readonly></div>
+                    <div class="apellido"><p>Apellido</p> <br> <br>
+                    <input type="text" id="apellido" readonly></div>
+                    <div class="telefono"><p>Telefono</p> <br> <br>
+                    <input type="text" id="telefono" readonly></div>
+                </div>
+                <div class="datos2">
+                    <div class="fecha"><p>Fecha</p>
+                    <input class="input-fecha" type="date" id="fecha" min="2022-01-01" max="2030-12-31"></div>
+                    <div class="hora"><p>Hora</p>
+                    <select class="select-hora" name="hora" id="horas_reserva"></select></div>   
+              </div>
+         </div>
+      </div>
+         <div id="datos-mesas" class="datosmesa">
+            <div class="seleccione">
+              <p><b><u>SELECCIONE MESA</u></b></p>  
+            </div>
+            
+            <div id="num-mesas" class="num-mesas">
+             <div class="contenedor-1">
+              <img src="./img/icons/vector-mesa 1.svg" class="mesas" height="70px" width="70px" id="1">
+              <img src="./img/icons/vector-mesa 2.svg"class="mesas" height="70px" width="70px" id="2">
+              <img src="./img/icons/vector-mesa 3.svg"class="mesas" height="70px" width="70px" id="3">
+              <img src="./img/icons/vector-mesa 4.svg" class="mesas" height="70px" width="70px" id="4">  
+             </div>   
+             <div class="contenedor-2">
+              <img src="./img/icons/vector-mesa 5.svg"class="mesas" height="70px" width="70px" id="5">
+              <img src="./img/icons/vector-mesa 6.svg" class="mesas" height="70px" width="70px" id="6">
+              <img src="./img/icons/vector-mesa 7.svg" class="mesas" height="70px" width="70px" id="7">
+              <img src="./img/icons/vector-mesa 8.svg" class="mesas" height="70px" width="70px" id="8">  
+             </div>
+             <div class="contenedor-3">
+               <img src="./img/icons/vector-mesa 9.svg"  height="100px" width="100px">
+               <img src="./img/icons/vector-mesa 10.svg"  height="100px" width="100px"> 
+             </div>
+            </div>
+         </div>
+
+         <div id="factura"class="factura">
+            <div id="loading"><img src="./img/icons/Loading.gif" width="40px" height="40px"></div>
+            <div class="boton-descarga-factura" id="descargar"> <img src="./img/icons/boton-descarga.svg" width="30px" height="30px"></div>
+            <div class="datos-factura" id="datos-factura">
+                <label id="nombref"></label>
+                <label id="telefonof"></label>
+                <label id="cedulaf"></label>
+                <label id="fechaR">Selecione Fecha</label>
+                <label id="horaR">Seleccione Hora</label>
+                <label id="mesaR">Seleccione Mesa:</label>
+                <div class="x-mesa"></div>
+                <label for="" class="codigo" id="codigo"></label>
+            </div>
+        
+         </div>
+    
+         <div ide="banner" class="banner"> 
+            
+          </div>
+    </div>
+
+    <section class="modal-pago" id="modal">
+        <div class="contenedor-modal">
+            <div class="titulo">DATOS DE PAGO</div>
+            <br>
+            <div class="banco">Banco de Venezuela</div>
+            <div class="datos">
+                <p>0102</p> 
+                <p>0426-4930487</p> 
+                <p>20.589.312</p> 
+            </div>
+            <br>
+            <br>
+            <div class="referencia">
+                    <p>Nº Referencia</p>
+                    <input type="text" id="ref" placeholder="últimos 5 dígitos" maxlength="5">
+            </div>
+            <br>
+            <div class="fecha">
+                    <p>Fecha de pago</p>
+                    <input type="date" id="fecha_dep" min="2022-01-01" max="2030-12-31" >
+            </div>
+            <br>
+            <br>
+            <p class="solicitar"> Solicitar Reservación </p>
+            <br>
+            <br>
+        </div> 
+    </section>
+
+    <!------------------------CONTENEDOR-MADRE------------------------------>
+    <input type="text" style="display:none;" name="" id="mesa" value="">
+    <script type="text/javascript" src="./js/html2canvas.js"></script>
+    <script> 
+            // Haciendo la conversión y descarga de la imagen al presionar el botón
+        $(document).on("click", ".mesas", function(e){
+            var id = $(this).attr("id");
+            console.log('<img src="./img/icons/vector-mesa '+ id +'.svg">');
+            $("#mesa").val(id);
+            $(".imgadd").remove();
+            $(".x-mesa").append('<img src="./img/icons/vector-mesa '+ id +'.svg" class="imgadd">');
+            if($("#fecha").val()!=""){
+                $("#descargar").show(2000);
+            }
+        });
+        function downloadCanvas(canvasId, filename) {
+            // Obteniendo la etiqueta la cual se desea convertir en imagen
+            var domElement = document.getElementById(canvasId);
+
+            // Utilizando la función html2canvas para hacer la conversión
+            html2canvas(domElement, {
+                onrendered: function(domElementCanvas) {
+                    // Obteniendo el contexto del canvas ya generado
+                    var context = domElementCanvas.getContext('2d');
+
+                    // Creando enlace para descargar la imagen generada
+                    var link = document.createElement('a');
+                    link.href = domElementCanvas.toDataURL("image/png");
+                    link.download = filename;
+
+                    // Chequeando para browsers más viejos
+                    if (document.createEvent) {
+                        var event = document.createEvent('MouseEvents');
+                        // Simulando clic para descargar
+                        event.initMouseEvent("click", true, true, window, 0,
+                            0, 0, 0, 0,
+                            false, false, false, false,
+                            0, null);
+                        link.dispatchEvent(event);
+                    } else {
+                        // Simulando clic para descargar
+                        link.click();
+                    }
+                }
+            });
+        }
+
+        $(document).on("click", ".solicitar", function (e) {
+            $.ajax({
+                type: 'POST',
+                url: './libreria/AjaxDB.php?mensaje=3',
+                data: {
+                    mesa:$("#mesa").val(),
+                    fecha:$("#fecha").val(),
+                    hora:$("#horas_reserva").find('option:selected').val(),
+                    referencia:$("#ref").val(),
+                    fecha_dep:$("#fecha_dep").val()
+                },
+                /* cache: false,
+                contentType: false,
+                processData: false, */
+                beforeSend: function(){
+                    $("#descargar").hide();
+                    $("#loading").show();
+                },
+                success: function(data){
+                    var regreso = data.split(";")
+                    $("#resultado").html(regreso[1]);
+                    $("#codigo").text("Código: "+regreso[1]);
+                    downloadCanvas('datos-factura', 'tikec.png');
+                    $(".modal-pago").removeClass("modal--show");
+                    $("#ref").val("");
+                    BuscaMesa($("#fecha").val(),$("#horas_reserva").find('option:selected').val());
+                    $("#loading").hide();
+                },
+                error: function(){
+                    //message = $("<span class='error'>Ha ocurrido un error.</span>");
+                }
+            });
+        })
+        
+        $(document).on("click","#descargar", function (e) {
+            $(".modal-pago").addClass("modal--show");
+        });
+        $(document).on("click",".modal-pago", function (e) {
+            //alert(e.target.id)
+            if (e.target.id=="modal") {
+                $(this).removeClass("modal--show");  
+            }
+        })
+    </script>
+</body>
+</html>

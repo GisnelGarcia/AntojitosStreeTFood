@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Actor&display=swap');
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{ 
+    font-family: 'Actor', sans-serif;
+    background: #16181B;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-areas: 
+    "menu-lateral contenedor-madre";
+    
+}
+
+.contenedor-madre{
+  grid-area: contenedor-madre;
+} 
+.contenedor-madre{ 
+   display: grid;
+   grid-template-areas:
+   "info public "
+   "mapa banner ";
+   gap: 20px 10px;
+   padding-top:120px ;
+   padding-right: 50px;
+   padding-left: 50px;
+
+ }
+ .informacion{
+   grid-area: info;
+   width:100% ;
+   height:300px ; 
+ }
+ .publicidad{
+   grid-area: public; 
+   width: 90%;
+   height:300px ; 
+ }
+ .publicidad img{
+  width:500px;
+  height: 300px;
+ }
+.mapa{
+   grid-area:mapa;  
+   width:100% ;
+   height:200px ; 
+   display:flex;
+   justify-content: center;
+   align-content: center;
+ }
+ .mapa .map{ 
+   width:100%;
+   height:200px; 
+   display:flex;
+   justify-content: center;
+   align-content: center; 
+ }
+
+ .banner{
+  grid-area:banner; 
+  width:100%;
+  height:300px;
+ }
+ .banner img{
+  width:500px;
+  height: 200px;
+ }
+
+
+ /*ESTILOS PARA EL TELEFONO*/
+ @media (max-width: 780px){
+  body{ 
+    font-family: 'Actor', sans-serif;
+    background: #16181B;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "contenedor-madre";
+     }
+.contenedor-madre{
+  grid-area: contenedor-madre;
+  width: 100%;
+}
+
+.contenedor-madre{
+  display: grid;
+  grid-template-areas: 
+  "info"
+  "public"
+  "mapa"
+  "banner";
+  gap:10px 0px;
+  padding-top:120px ;
+  margin: 0px;
+  padding-right:0px;
+  padding-left: 0px;
+}
+.informacion{
+  grid-area: info;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.publicidad{
+  grid-area: public;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.publicidad img{
+  width: 90%;
+}
+.mapa{
+  grid-area: mapa;
+}
+.banner{
+  grid-area: banner;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.banner img{
+  width: 90%;
+}
+
+
+ }

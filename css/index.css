@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Actor&display=swap');
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{ 
+    font-family: 'Actor', sans-serif;
+    background: #16181B; 
+}
+
+.contenedor-madre{
+  padding-top: 110px;
+  display: grid;
+  grid-template-rows: 254px 40px;
+  grid-template-areas: 
+  "menu"
+  "conocenos"
+  "info"
+  "redes"
+  "redes-sociales"
+  "publicidad";
+  gap: .8em;
+} 
+.menu-principal{
+    grid-area: menu;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.menu-principal a img{
+    width:150px ;
+    height:250px ;
+}
+.conocenos{
+    grid-area: conocenos;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+.conocenos h2{
+color: #fff;
+font-size: 30px;
+display: flex;
+
+}
+.conocenos div{
+    width: 100%;
+    height: 3px;
+    background-color: #FF9100;
+}
+.informacion{
+    grid-area: info;
+    width: 100%;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.informacion p {
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    width: 80%;
+}
+.informacion p b{
+    color: #FDB806;
+}
+.informacion img{
+    width: 90%;
+    height: 150px;
+}
+.redes{
+    grid-area: redes;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;  
+}
+.redes h2{
+    color: #fff;
+    font-size: 30px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+.redes div{
+    width: 100%;
+    height: 3px;
+    background-color: #FF9100;
+}
+.iconos{
+    grid-area: redes-sociales;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+.iconos .instagram{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.iconos .wss{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.publicidad{
+    grid-area: publicidad;
+    width: 100%;
+    display: flex;
+}
+.publicidad a img{
+    width: 100%;
+    height: auto;
+}
+@media (max-width: 780px){
+    .menu-principal a img{
+        width:80px ;
+        height:190px ;
+    }
+    .informacion img{
+        width: 90%;
+        height: 100px;
+    }
+    .redes h2{
+    color: #fff;
+    font-size: 14px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+.iconos .instagram{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.iconos .wss{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+ }

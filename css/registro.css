@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Actor&display=swap');
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{ 
+    font-family: 'Actor', sans-serif;
+    background: #16181B;
+     }
+
+.contenedor-madre{
+    padding-top: 95px;
+    padding-left: 0;
+    padding-right:0 ;
+    padding-bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/registrete.png'); 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    
+}
+.contenedor-registro{
+    
+    padding: 5px 0;
+    width: 60%;
+    height: 70%;
+    background-color: rgba(31, 33, 37, 0.829);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center; 
+    border-radius: 15px;
+    
+}
+.contenedor-registro h2{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 35px;
+    color: #fff;
+}
+.datos{
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.datos input{
+    height:18px ;
+    background-color: #1F2125;
+    color: #fff;
+    border: none; 
+    border:solid 1px #FF9100;
+    border-radius: 3px;
+    font-size: 15px;
+}
+.datos p{
+    font-size: 20px;
+    color: #fff;
+}
+/*-------------DATOS-1------------*/
+.datos1{
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cedula{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 25px;
+}
+.nombre{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 25px;
+}
+.apellido{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 25px;
+}
+.telefono{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 25px;
+}
+.direccion{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/*-------------DATOS-2------------*/
+.datos2{
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.correo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 25px;
+}
+.clave{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 25px;
+}
+.clave2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   
+}
+.contenedor-registro h3{
+    font-size: 18px;
+    font-weight: bold;
+    color: #1F2125;
+    background-color: #FF9100;
+    border-radius: 5px;
+    width: 120px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.contenedor-registro .flecha{
+    padding-top: 20px;
+    
+}
+.contenedor-registro .flecha img{
+    width: 34px;
+    height: 34px; 
+}
+
+@media (max-width: 780px){
+    .contenedor-madre{
+    background-image: url('../img/registrete.png'); 
+    background-repeat: repeat; 
+    background-size:  center;
+    }
+    .contenedor-registro{
+    
+        padding: 5px 0;
+        width: 90%;
+        height: 90%;
+        background-color: #1F2125;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center; 
+        border-radius: 15px;
+        
+    }
+    .datos{
+        width: 80%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-content: center;
+    }
+    .datos1{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-bottom: 25px;
+        
+    }
+    .datos2{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        padding-bottom: 5px;
+
+    }
+    .contenedor-registro h3{
+        font-size: 18px;
+        font-weight: bold;
+        color: #1F2125;
+        background-color: #FF9100;
+        border-radius: 5px;
+        width: 120px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        
+    }
+
+}

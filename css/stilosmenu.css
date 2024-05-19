@@ -1,0 +1,638 @@
+@import url('https://fonts.googleapis.com/css2?family=Actor&display=swap');
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{ 
+    font-family: 'Actor', sans-serif;
+    background: #16181B;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-areas: 
+    "menu-lateral contenedor-madre";
+    
+}
+
+.contenedor-madre{ 
+  grid-area: contenedor-madre;
+}
+.contenedor-madre{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-areas:  
+    "menu_menu"
+    "parte1"
+    "burgers"
+    "parte2"
+    "menu-infantil"
+    "parte3"
+    "extras"
+    "parte4"
+    "bebidas"
+    "parte5";
+    gap: .8em;
+    padding-top: 120px;
+    padding-left: 65px;
+}
+.menu_menu{
+    grid-area: menu_menu;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.menu_menu h2{
+    color: #fff;
+    font-size: 30px;
+    display: flex;
+    
+    } 
+.menu_menu div{
+    width: 100%;
+    height: 3px;
+    background-color: #FF9100;
+}
+.parte-1{
+    grid-area: parte1;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+body p{
+color: #fff;
+}
+body h3{
+    color: #FDB806;
+    font-size: 25px;
+}
+/*...................................................................*/
+.parte-1{
+    display: grid;
+    width: 100%;
+    grid-template-areas:
+    "papas . papas-xl ."
+    "papas-fritas precio-1 papas-fritas-xl precio-5"
+    "choripapas precio-2 choripapas-xl precio-6"
+    "papas-americanas precio-3 papas-americanas-xl precio-7"
+    "nachos precio-4 perros precio-8"
+    "descripcion . pollo precio-9 " 
+    ". . descripcion-2 .";
+    gap: 10px 0px;
+
+}
+.parte-1 .rapida{
+    grid-area: papas;
+}
+.parte-1 .papitas{
+    grid-area: papas-fritas;
+    cursor: pointer;
+}
+.parte-1 .papitas{
+    grid-area: papas-fritas;
+}
+.parte-1 .chori{
+    grid-area: choripapas;
+    cursor: pointer;
+}
+
+.parte-1 .p-americanas{
+    grid-area:papas-americanas;
+    cursor: pointer;
+}
+.parte-1 .nachitos{
+    grid-area:nachos;
+    cursor: pointer;
+}
+.parte-1 .descripcion{
+    grid-area:descripcion;
+}
+.parte-1 .precio-1{
+    grid-area:precio-1;
+}
+.parte-1 .precio-2{
+    grid-area:precio-2;
+}
+.parte-1 .precio-3{
+    grid-area:precio-3;
+}
+.parte-1 .precio-60{
+    grid-area:precio-4;
+}
+.parte-1 .rapida-10{
+    grid-area:papas-xl;
+}
+.parte-1 .papitas-20{
+    grid-area: papas-fritas-xl;
+    cursor: pointer;
+}
+.parte-1 .chori-20{
+    grid-area: choripapas-xl ;
+    cursor: pointer;
+}
+.parte-1 .p-americanas-10{
+    grid-area: papas-americanas-xl ;
+    cursor: pointer;
+}
+.parte-1 .perritos{
+    grid-area:perros ;
+    cursor: pointer;
+}
+.parte-1 .pollo{
+    grid-area:pollo ;
+    cursor: pointer;
+}
+.parte-1 .descripcion-100{
+    grid-area:descripcion-2;
+    display: flex;
+    align-items: flex-end;
+}
+.parte-1 .precio-10{
+    grid-area:precio-5 ;
+}
+.parte-1 .precio-20{
+    grid-area:precio-6 ;
+}
+.parte-1 .precio-40{
+    grid-area:precio-7 ;
+}
+.parte-1 .precio-70{
+    grid-area:precio-8 ;
+}
+.parte-1 .precio-90{
+    grid-area:precio-9 ;
+}
+
+/*.......................................................................................*/
+.burger{
+    grid-area: burgers;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.burger h2{
+    color: #fff;
+    font-size: 30px;
+    display: flex;
+    
+    } 
+.burger div{
+    width: 100%;
+    height: 3px;
+    background-color: #FF9100;
+}
+/*-------------------------------------------------*/
+.parte-2{
+    grid-area: parte2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    width:100% ;
+}
+
+.parte-2 h3{
+    cursor: pointer;
+}
+
+.hamburguesas{
+    display: grid;
+    grid-template-areas:
+    ". normal combo"
+    "hambur-1 pre-normal pre-combo"
+    "descrip-1 . ."
+    "hambur-2 pre-normal-2 pre-combo-2"
+    "descrip-2 . ."
+    "hambur-3 pre-normal-3 pre-combo-3"
+    "descrip-3 . ."
+    "hambur-4 pre-normal-4 pre-combo-4"
+    "descrip-4 . ."
+    "hambur-5 pre-normal-5 pre-combo-5"
+    "descrip-5 . ."
+    "hambur-6 pre-normal-6 pre-combo-6"
+    "descrip-6 . ."
+    "hambur-7 pre-normal-7 pre-combo-7"
+    "descrip-7 . ."
+    "hambur-8 pre-normal-8 pre-combo-8"
+    "descrip-8 . ."
+    "hambur-9 pre-normal-9 pre-combo-9"
+    "descrip-9 . ."
+    "hambur-10 pre-normal-10 pre-combo-10"
+    "descrip-10 . ." ;
+    gap:8px 20px;
+    width: 90%;
+     
+}
+.hamburguesas .normal{
+    grid-area: normal;
+}
+.hamburguesas .combo{
+    grid-area: combo;
+}
+
+.hamburguesas .com14{
+    grid-area: hambur-1;
+}
+.hamburguesas .com15{
+    grid-area: descrip-1;
+}
+.hamburguesas .com16{
+    grid-area:hambur-2 ;
+}
+.hamburguesas .com17{
+    grid-area:descrip-2 ;
+}
+.hamburguesas .com18{
+    grid-area: hambur-3;
+}
+.hamburguesas .com19{
+    grid-area:descrip-3 ;
+}
+.hamburguesas .com20{
+    grid-area: hambur-4;
+}
+.hamburguesas .com21{
+    grid-area:descrip-4 ;
+}
+.hamburguesas .com22{
+    grid-area:hambur-5 ;
+}
+.hamburguesas .com23{
+    grid-area:descrip-5 ;
+}
+.hamburguesas .com24{
+    grid-area: hambur-6;
+}
+.hamburguesas .com25{
+    grid-area:descrip-6 ;
+}
+.hamburguesas .com26{
+    grid-area:hambur-7 ;
+}
+.hamburguesas .com27{
+    grid-area:descrip-7 ;
+}
+.hamburguesas .com28{
+    grid-area:hambur-8 ;
+}
+.hamburguesas .com29{
+    grid-area:descrip-8 ;
+}
+.hamburguesas .com30{
+    grid-area: hambur-9;
+}
+.hamburguesas .com31{
+    grid-area:descrip-9;
+}
+.hamburguesas .com32{
+    grid-area:hambur-10 ;
+}
+.hamburguesas .com33{
+    grid-area:descrip-10;
+}
+
+.hamburguesas .pre10{
+grid-area:pre-normal ;
+}
+.hamburguesas .pre11{
+    grid-area:pre-normal-2 ;
+    }
+.hamburguesas .pre12{
+     grid-area:pre-normal-3 ;
+  }
+.hamburguesas .pre13{
+     grid-area:pre-normal-4 ;
+ }
+.hamburguesas .pre14{
+    grid-area:pre-normal-5;
+}
+.hamburguesas .pre15{
+    grid-area:pre-normal-6;
+    }
+.hamburguesas .pre16{
+     grid-area:pre-normal-7 ;
+        }
+.hamburguesas .pre17{
+    grid-area:pre-normal-8 ;
+      }
+.hamburguesas .pre18{
+     grid-area:pre-normal-9;
+     }
+.hamburguesas .pre19{
+     grid-area:pre-normal-10 ;
+    }
+
+.hamburguesas .pre21{
+    grid-area:pre-combo;
+}
+.hamburguesas .pre22{
+    grid-area:pre-combo-2;
+}
+.hamburguesas .pre23{
+    grid-area:pre-combo-3;
+}
+.hamburguesas .pre24{
+    grid-area:pre-combo-4;
+}
+.hamburguesas .pre25{
+    grid-area:pre-combo-5;
+}
+.hamburguesas .pre26{
+    grid-area:pre-combo-6;
+}
+.hamburguesas .pre27{
+    grid-area:pre-combo-7;
+}
+.hamburguesas .pre28{
+    grid-area:pre-combo-8;
+}
+.hamburguesas .pre29{
+    grid-area:pre-combo-9;
+}
+.hamburguesas .pre30{
+    grid-area:pre-combo-10;
+}
+
+
+
+
+
+
+/*------------------------------------------------------------------------------*/
+.menu-infantil{
+    grid-area:menu-infantil ;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.menu-infantil h2{
+    color: #fff;
+    font-size: 30px;
+    display: flex;
+    width: 33.33%;
+    justify-content: center;
+    
+    } 
+.menu-infantil div{
+    width: 33.33%;
+    height: 3px;
+    background-color: #FF9100;
+}
+
+.parte-3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.parte-3 h3{
+    cursor: pointer;
+}
+.parte-3 .one{
+    display: grid;
+    grid-template-areas: 
+    "comida precio"
+    "descripcion .";
+    gap: 0 20px;
+    
+}
+.parte-3 .one .comida{
+    grid-area: comida;
+}
+.parte-3 .one .descripcion{
+    grid-area: descripcion;
+}
+.parte-3 .one .precio{
+    grid-area: precio;
+}
+.parte-3 .two{
+    display: grid;
+    grid-template-areas: 
+    "comida precio"
+    "descripcion .";
+    gap: 0 20px;
+}
+.parte-3 .two .comida{
+    grid-area: comida;
+}
+.parte-3 .two .descripcion{
+    grid-area: descripcion;
+}
+.parte-3 .two .precio{
+    grid-area: precio;
+}
+/*--------------------------------------------------------------------*/
+.extras{
+    grid-area:extras;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.extras h2{
+    color: #fff;
+    font-size: 30px;
+    display: flex;
+
+    justify-content: center;
+    
+    } 
+.extras div{
+    width: 100%;
+    height: 3px;
+    background-color: #FF9100;
+}
+.parte-4{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+       
+}
+.parte-4 .extras-acomodadas{
+    display:grid;
+    grid-template-areas: 
+    "ex-1 pre-1 ex-6 pre-6"
+    "ex-2 pre-2 ex-7 pre-7"
+    "ex-3 pre-3 ex-8 pre-8"
+    "ex-4 pre-4 ex-9 pre-9"
+    "ex-5 pre-5 ex-10 pre-10";
+    gap:10px 50px;
+
+}
+.parte-4 .extra-0{
+grid-area: ex-1;
+}
+.parte-4 .extras-acomodadas .extra-1{
+    grid-area: ex-2;
+    }
+.parte-4 .extras-acomodadas .extra-2{
+grid-area: ex-3;
+}
+.parte-4 .extras-acomodadas .extra-3{
+    grid-area: ex-4;
+}
+.parte-4 .extras-acomodadas .extra-4{
+    grid-area: ex-5;
+    } 
+.parte-4 .extras-acomodadas .extra-5{
+grid-area: ex-6;
+}
+.parte-4 .extras-acomodadas .extra-6{
+    grid-area: ex-7;
+    }
+.parte-4 .extras-acomodadas .extra-7{
+grid-area: ex-8;
+}
+.parte-4 .extras-acomodadas .extra-8{
+    grid-area: ex-9;
+}
+.parte-4 .extras-acomodadas .extra-9{
+    grid-area: ex-10;
+    }    
+.parte-4 .extras-acomodadas .precio-1{
+    grid-area: pre-1;
+}
+.parte-4 .extras-acomodadas .precio-2{
+    grid-area: pre-2;
+}
+.parte-4 .extras-acomodadas .precio-3{
+    grid-area: pre-3;
+}
+.parte-4 .extras-acomodadas .precio-4{
+    grid-area: pre-4;
+}
+.parte-4 .extras-acomodadas .precio-5{
+    grid-area: pre-5;
+}
+.parte-4 .extras-acomodadas .precio-6{
+    grid-area: pre-6;
+}
+.parte-4 .extras-acomodadas .precio-7{
+    grid-area: pre-7;
+}
+.parte-4 .extras-acomodadas .precio-8{
+    grid-area: pre-8;
+}
+.parte-4 .extras-acomodadas .precio-9{
+    grid-area: pre-9;
+}
+.parte-4 .extras-acomodadas .precio-10{
+    grid-area: pre-10;
+}             
+/*--------------------------------------------------------------------*/
+ .bebidas{
+    grid-area:bebidas;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.bebidas h2{
+    color: #fff;
+    font-size: 30px;
+    display: flex;
+
+    justify-content: center;
+    
+    } 
+.bebidas div{
+    width: 100%;
+    height: 3px;
+    background-color: #FF9100;
+}
+.parte-5{
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-evenly;
+    padding-bottom: 40px;
+}
+.parte-5 .bebidas-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.parte-5 .bebidas-1 .bebidasss{
+    padding-right: 38px;
+}
+.parte-5 .bebidas-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.parte-5 .bebidas-2 .bebidasss{
+    padding-right: 38px;
+}
+
+/*-----------------------------------------------------*/
+.modal{
+    position: fixed;
+    top:0 ;
+    left:0 ;
+    right: 0;
+    bottom:0 ;
+    background-color: #111111bd;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s;
+    cursor: pointer;
+}
+.modal--show{
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s;
+
+}
+.contenedor-modal{
+    margin: auto;
+    width: 40%;
+    max-width: 500px;
+    max-height: 40%;
+    background-color: #111111bd;
+    border-radius: 6px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-modal img{
+    width: 100%;
+    height: 100%;
+
+}
+
+/*-----------------------------------------------------*/
+@media (max-width: 780px){
+    body{ 
+      font-family: 'Actor', sans-serif;
+      background: #16181B;
+      display: grid;
+      grid-template-areas: 
+      "contenedor-madre";
+       }
+
+.parte-1{
+    gap: 10px 20px;
+    
+    } 
+ 
+       }
+
+
+
+
+
+
+
+
+

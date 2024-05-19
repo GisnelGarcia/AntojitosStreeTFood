@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/menu-administradores.css">
+    <link rel="stylesheet" href="./css/menu-lateral-tlfn-administrador.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/control-clientes.css">
+    
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script src="./js/datos.js"></script>
+    <script>
+      $(document).ready(function(){
+        
+        tablaUsuarios();
+        $("#buscar").on("click", function(){
+          $(".contenedor-item").remove()
+
+          tablaUsuarios();
+        });
+      });
+    </script>
+    
+</head>
+<body>
+    <header class="encabezado">
+      <div class="header">
+        <div class="btn-menu">
+          <label for="btn-menu"> ☰ </label>
+        </div>
+        <div class="logo">
+          <h1> <img src="img/logo.png" ></h1> 
+        </div>
+        <nav class="menu">
+          <div class="div-menu">
+            <a href="./inicio-sesion.html"> Inicio de sesión </a>
+              <a href="https://www.instagram.com/antojitos.streetfood/?hl=es"> <img src="img/instagram.svg" > </a>
+              <a href="https://api.whatsapp.com/send?phone=5804264930465&text=Holaaa!%20Antojitos%20"> <img src="img/ws.svg"> </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!------------------------MENU LATERAL--------------------------------->
+    <div class="menu-lateral">
+      <a href=""> <img src="./img/inicio-admi.png"></a> 
+      <a href=""> <img src="./img/menu-admi.png"></a> 
+      <a href=""> <img src="./img/reser-admi.png"></a> 
+      <a href=""> <img src="./img/eventos-admi.png"></a> 
+      <a href=""> <img src="./img/contac-admi.png"></a> 
+      <a href=""> <img src="./img/reservas-admi.png"></a> 
+      <a href=""> <img src="./img/control-usuarios.png"></a> 
+
+    </div> 
+    <!-----------------------MENU TELEFONOS ---------------------------------->
+    <div class="capa"></div>
+    <!------------------------------------->
+    <input class="check" type="checkbox" id="btn-menu">
+    <div class="container-menu">
+      <div class="cont-menu">
+        <nav>
+          <a href=""> <img src="./img/inicio-admi.png"></a> 
+          <a href=""> <img src="./img/menu-admi.png"></a> 
+          <a href=""> <img src="./img/reser-admi.png"></a> 
+          <a href=""> <img src="./img/eventos-admi.png"></a> 
+          <a href=""> <img src="./img/contac-admi.png"></a> 
+          <a href=""> <img src="./img/reservas-admi.png"></a> 
+          <a href=""> <img src="./img/control-usuarios.png"></a> 
+        </nav>
+        <label for="btn-menu">✖️</label>
+      </div> 
+    </div> 
+    <!-----------------CONTENEDOR MADRE -------------------->
+    <div id="contenedor-madre" class="contenedor-madre">
+      <div class="buscador">
+        <div class="cont-input">
+          <input type="text" id="buscado">
+          <img src="./img/lupa.png" id="buscar">
+        </div>
+      </div>
+      <div class="contenedor-table">
+      <div class="table-title"> <u>DATOS DE USUARIO</u>  <img src="./img/icons/loading.gif" id="loading" height="40px" width="40px"></div>
+      <br>
+      <div class="contenedor-header">
+        <div class="table-header">Código</div>
+        <div class="table-header">Nombre</div>
+        <div class="table-header">Apellido</div>
+        <div class="table-header">Correo</div>
+        <div class="table-header">Teléfono</div>
+      </div>
+      <br>
+      <br> 
+      <div class="contenedor-item">
+        <div class="table-item">999</div>
+        <div class="table-item">Gisnel</div>
+        <div class="table-item">Garcia</div>
+        <div class="table-item">gisnelgarcia@gmail.com</div>
+        <div class="table-item">04264930465</div>
+        
+      </div>
+      
+    </div>
+    
+
+
+  </div>
+
+  
+
+  <section id="cambio" class="cambio">
+    <div class="contenedor-cambio">
+      <label for="">Tipo de Usuario</label>
+      <br>
+    
+      <select name="tipoUsuer" id="tipoUsuer">
+        <option value="0">Administrador</option>
+        <option value="1">Cliente</option>
+      </select>
+      <br>
+      <br>
+      <a class="cerrar">Cerrar</a>
+      <br>
+      <br>
+    </div>
+  </section>
+  
+  <script>
+     $(document).on("click",".contenedor-item", function(){
+        $(".cambio").addClass("cambio--show");
+      });
+      $(document).on("click",".cerrar", function(){
+        $(".cambio").removeClass("cambio--show");
+      })
+  </script>
+  <!-- <script src="./js/modal-usuarios.js"></script> -->
+  
+</body>
+</html>

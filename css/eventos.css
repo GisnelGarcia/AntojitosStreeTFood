@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Actor&display=swap');
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{ 
+    font-family: 'Actor', sans-serif;
+    background: #16181B;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-areas: 
+    "menu-lateral contenedor-madre";
+    
+}
+
+.contenedor-madre{
+  grid-area: contenedor-madre;
+  padding-top: 120px;
+  padding-left: 65px;
+  gap: .8em;
+  width: 100%;
+
+
+}  
+.contenedor-madre{
+    display: grid;
+    grid-template-areas: 
+    "linea"
+    "parrafo-1"
+    "linea-2"
+    "linea-3"
+    "parrafo-2"
+    "linea-4"
+    "linea-5"
+    "linea-6";
+}
+.contenedor-madre .linea{
+    grid-area: linea;
+    width: 100%; 
+}
+ 
+.contenedor-madre .linea img{
+    width: 100%;
+    height:180px;
+    
+ }
+
+ .line-2{
+    grid-area:linea-2 ;
+    width: 100%;
+ }
+ .line-2 img{
+    width: 100%;
+    height:180px;
+ }
+ .line-3{
+    grid-area:linea-3 ;
+    width: 100%;
+ }
+ .line-3 img{
+    width: 100%;
+    height:180px;
+ }
+ .line-4{
+    grid-area:linea-4;
+    width: 100%;
+ }
+ .line-4 img{
+    width: 100%;
+    height:180px;
+ }
+ .line-5{
+    grid-area:linea-5;
+    width: 100%;
+ }
+ .line-5 img{
+    width: 100%;
+    height:180px;
+ }
+ .line-6{
+    grid-area:linea-6;
+    width: 100%;
+ }
+ .line-6 img{
+    width: 100%;
+    height:180px;
+ }
+
+
+.parrafo-1{
+    grid-area: parrafo-1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;   
+}
+.parrafo-1 p{
+    color: #fff;
+    font-size: 35px;
+    text-align: center;
+}
+
+
+.parrafo-2{
+    grid-area: parrafo-2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;   
+}
+.parrafo-2 p{
+    color: #fff;
+    font-size: 35px;
+    text-align: center;
+
+}
+
+ /*ESTILOS PARA EL TELEFONO*/
+ @media (max-width: 780px){
+    body{ 
+      font-family: 'Actor', sans-serif;
+      background: #16181B;
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-areas: 
+      "contenedor-madre";
+       }
+ .contenedor-madre{
+  grid-area: contenedor-madre;
+  padding-top: 120px;
+  padding-right: 0;
+  padding-left:0 ;
+  padding-bottom:0 ;
+  gap: .8em;
+
+   }
+ 
+ }
+

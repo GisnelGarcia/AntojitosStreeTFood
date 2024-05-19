@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/inicio-sesion.css">
+    <style>
+      #resultado{
+        width: 200px;
+        z-index: 100;
+        background-color: aliceblue;
+      }
+    </style>
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script src="./js/iniciarSesion.js"></script>
+</head>
+<body>
+    <header class="encabezado">
+        <div class="header">
+            <div class="btn-menu">
+            </div>
+            <div class="logo">
+                <h1> <img src="img/logo.png" ></h1> 
+            </div>
+            <nav class="menu">
+                <div class="div-menu">
+                  <a href="https://www.instagram.com/antojitos.streetfood/?hl=es"> <img src="img/instagram.svg" > </a>
+                  <a href="https://api.whatsapp.com/send?phone=5804264930465&text=Holaaa!%20Antojitos%20"> <img src="img/ws.svg"> </a>
+                </div>
+            </nav>
+        </div>
+          
+      </header>
+     
+      <!-----------------CONTENEDOR MADRE -------------------->
+      <div class="contenedor-madre">
+        <div class="contenedor-login">
+          <br>
+          <h2> <u>Inicio de Sesión</u> </h2>
+          <div class="datos">
+              <div class="correo"><p>Correo</p>  <input type="text" id="correo" ></div>
+              
+              <div class="clave"><p>Clave</p>  <input type="password" id="clave"></div>
+          </div>
+          <div id="iniciar" class="boton">
+            <h3>Iniciar Sesión</h3>
+          </div>
+          <a href="./registro.html">REGISTRATE</a>
+          <div class="flecha"> <a href="./index.html"> <img src="./img/left-arrow-circle-solid-24 (1).png"></a></div>
+          
+        </div>
+
+        
+  
+      </div>
+      <div id="resultado"></div>
+   
+</body>
+</html>

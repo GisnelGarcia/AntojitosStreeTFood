@@ -1,0 +1,565 @@
+@import url('https://fonts.googleapis.com/css2?family=Actor&display=swap');
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{ 
+    font-family: 'Actor', sans-serif;
+    background: #16181B;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-areas: 
+    "menu-lateral contenedor-madre";
+}
+
+.contenedor{
+  grid-area: contenedor-madre;
+} 
+
+/*ESTILOS DEL HEDER*/
+.encabezado{
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;left: 0;
+    background: #16181B;
+ }
+
+ .header {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+ }
+ .header .btn-menu, .logo{
+    float: left;
+    line-height:100px;
+ }
+
+ .logo h1 img{
+    max-height:100%;
+      min-height:60%;
+      width:40%;
+   
+ }
+ .header .menu{
+    float: right;
+    line-height: 100px;
+ }
+ .header .menu a{
+    display: inline-block;
+    padding: 15px;
+    line-height: normal;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    font-size: 18px;
+    margin-right: 5px;
+    
+ } 
+ .header .menu a:hover{
+    border-bottom: 2px solid #c7c7c7;
+    padding-bottom: 5px;
+ }
+/*FIN DE LOS ESTILOS DEL HEADER*/
+
+/*ESRILOS DEL CUERPO*/
+
+.contenedor{ 
+  display: grid;
+   grid-template-areas:
+  "datos datos factura"
+  "datos datos factura"
+  "mesas mesas banner";
+  gap: 10px 0px;
+  padding-top:120px;
+  padding-left: 65px;
+  padding-right: 10px;
+
+}
+.datosreservation{
+  grid-area: datos;
+   
+}
+.datosmesa{
+  grid-area: mesas; 
+   
+}
+.factura{
+  grid-area:factura; 
+  background-color: #1F2125;
+  width:200px ;
+  height:280px;
+ 
+
+  
+}
+.banner{
+ grid-area:banner; 
+  
+}
+.img-banner{
+  display: flex;
+   height: 280px;
+   width: 280px;
+   align-content: flex-start;
+}
+/*ESTILOS DEL CONTENEDOR DE DATOS DEL CLIENTE*/
+.datosreservation{
+  width: 100%;
+  height:100% ;
+}
+.ingrese-datos h2{
+  font-size: 30px;
+  line-height: 8px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.contenedor-datos{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+.datos1{
+  color:#fff;
+  font-size: 20px;
+  line-height: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  
+}
+.datos2{
+  color:#fff;
+  font-size: 20px;
+  line-height: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 20px;
+ 
+}
+.datos2 .hora select{
+width:130px;
+height:18px ;
+background-color: rgba(0, 0, 0, 0.5);
+color: #fff;
+border: none;
+border:solid 1px #FF9100;
+border-radius: 4px;
+font-size: 13px;
+}
+.contenedor-datos p{
+  padding: 25px 10px;
+}
+
+.contenedor-datos input{
+width:130px;
+height:18px ;
+background-color: #1F2125;
+color: #fff;
+border:solid 1px #FF9100;
+border-radius: 3px;
+font-size: 13px;
+
+}
+                              
+input:focus{
+  background-color: #1F2125;
+}
+.cedula{
+  display: flex;
+  justify-content:space-evenly;
+  align-items:center;
+}
+.nombre{
+  display: flex;
+  justify-content:space-evenly;
+  align-items:center;
+}
+.apellido{
+  display: flex;
+  justify-content:space-evenly;
+  align-items:center;
+}
+.telefono{
+  display: flex;
+  justify-content:space-evenly;
+  align-items:center;
+}
+.fecha{
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.hora{
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* FIN DE LOS ESTILOS DEL CONTENEDOR DE DATOS DEL CLIENTE*/
+/*ESTILOS DEL CONTENEDOR DE MESAS*/
+
+.datosmesa .seleccione{
+  font-size: 20px;
+  line-height: 8px;
+  color: #FF9100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.seleccione{
+  padding: 30px 0px;
+}
+.num-mesas{
+    display: grid;
+   grid-template-areas: 
+   "contenedor1 contenedor1 contenedor3" 
+   "contenedor2 contenedor2 contenedor3";
+   gap:.10em; 
+   
+   }
+.contenedor-1{
+  grid-area: contenedor1;
+  display: flex;
+  justify-content: space-around;
+  
+}
+.contenedor-2{
+  grid-area: contenedor2;
+  display: flex;
+  justify-content: space-around;
+  
+}
+.contenedor-3{
+  grid-area: contenedor3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+ /* FIN DE LOS ESTILOS DEL CONTENEDOR DE MESAS*/
+ /*ESTILOS DEL CONTENDOR DE LA FACTURA*/
+label{
+   color:white;
+}
+
+.factura .datos-factura{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center ;
+  width: 100%;
+  height:240px ;
+  background-color: #1F2125;
+}
+.factura .x-mesa{
+  width:70px;
+  height:70px;
+}
+.imgadd{
+  width:100%;
+  height:100%;
+}
+.codigo{
+  color:#FDB806;
+  font-weight: bold;
+} 
+.boton-descarga-factura{
+  float: right;
+  cursor: pointer;
+  display: none;
+}
+
+
+/* FIN DE LOS ESTILOS DEL CONTENDOR DE LA FACTURA*/
+/*ESTILO DEL CCONTENEDOR DEL BANNER*/
+.banner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height:270px;
+  background-image: url(../img/Group\ 24.png);
+  background-repeat: no-repeat; 
+  background-size: contain;
+}
+
+
+/* FIN DEL CONTENERDOR DEL BANNER*/
+/*-----------------------------------------------------*/
+
+.modal-pago{
+  position: fixed;
+  top:0 ;
+  left:0 ;
+  right: 0;
+  bottom:0 ;
+  background-color: #111111bd;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .6s;
+  cursor: pointer;
+}
+.modal--show{
+  opacity: 1;
+  pointer-events: unset;
+  transition: opacity .6s;
+
+}
+.contenedor-modal{
+  margin: auto;
+  width: 50%;
+  max-width: 500px;
+  max-height: 50%;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contenedor-modal input{
+  width: 179px;
+  border:solid 1px #FF9100;
+  border-radius: 3px;
+  font-size: 13px;
+}
+.contenedor-modal .titulo{
+  font-weight: bold;
+  color: #FDB806;
+  font-size: 30px;
+}
+.contenedor-modal .banco{
+  font-size: 20px;
+}
+.contenedor-modal .datos{
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.contenedor-modal .datos p{
+ margin-left: 10px;
+  margin-right: 10px;
+}
+.contenedor-modal .referencia{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 80%;
+}
+.contenedor-modal .fecha{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 80%;
+}
+.contenedor-modal .solicitar{
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #16181B;
+  padding: 10px 20px;
+}
+
+/*-----------------------------------------------------*/
+/*ESTILO DEL CUERPO PARA TLFN*/
+
+@media (max-width: 780px){
+  body{ 
+    font-family: 'Actor', sans-serif;
+    background: #16181B;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "contenedor-madre";
+     } 
+.contenedor{
+      display: grid;
+       grid-template-areas:
+      "datos datos datos"
+      "datos datos datos"
+      "mesas mesas mesas"
+      "factura factura factura"
+      "banner banner banner";
+      gap: 25px 15px;
+      margin: 0px;
+      padding-top: 120px;
+      padding-left: 10px;
+      padding-right:10px ;
+  } 
+  
+ 
+  /*ESTILOS DEL HEADER*/
+   .header {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+   }
+   h1{
+    width:120px ;
+    height:100px ;
+   }
+   
+   .header .btn-menu, .logo{
+      float: left;
+      line-height:100px;
+   }
+  .header .btn-menu label{
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    
+  }
+   .logo h1 img{
+      max-height:100%;
+        min-height:60%;
+        width:100%;
+     
+   }
+   .header .menu{
+      float: right;
+      line-height: 100px;
+   }
+   .header .menu a{
+      display: inline-block;
+      padding: 10px;
+      line-height: normal;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      border-bottom: 2px solid transparent;
+      font-size: 10px;
+      margin-right: 5px;
+      
+   }
+   
+  /* FIN DEL ESTILOS DEL HEADER*/
+/*ESTILOS DEL CONTENEDOR DEL DATOS DEL CLIENTE*/
+.datosreservation{
+  width: 100%;
+  height:100%;
+}
+.ingrese-datos h2{
+  font-size: 20px;
+  line-height: 8px;
+  padding: 30px;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.contenedor-datos{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-area: 
+  "dat1 dat2";
+  gap: .8em;
+}
+.datos1{
+  color:#fff;
+  font-size: 15px;
+  line-height: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  
+}
+.datos2{
+  color:#fff;
+  font-size: 15px;
+  line-height: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height:232px ;
+}
+.datos2 .hora select{
+width:130px;
+height:18px ;
+background-color: rgba(0, 0, 0, 0.5);
+border-color:#FF9100 ;
+color: #fff;
+}
+.contenedor-datos p{
+  padding: 25px 0px;
+}
+
+.contenedor-datos input{
+width:130px;
+height:18px ;
+background-color: rgba(0, 0, 0, 0.5);
+border-color:#FF9100 ;
+color: #fff;
+
+}
+.cedula{
+  display: flex;
+  justify-content:space-evenly;
+  align-items:center;
+}
+.nombre{
+  display: flex;
+  justify-content:space-evenly;
+  align-items:center;
+}
+.apellido{
+  display: flex;
+  justify-content:space-evenly;
+  align-items:center;
+}
+.telefono{
+  display: flex;
+  justify-content:space-evenly;
+  align-items:center;
+}
+.fecha{
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.hora{
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* FIN DE LOS ESTILOS DEL CONTENEDOR DEL DATOS DEL CLIENTE*/
+ 
+/*ESTILO DEL CCONTENEDOR DEL BANNER*/
+.banner{
+  grid-area: banner;
+}
+.banner{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ width: 100%;
+ height:100%;
+}
+
+/* FIN DEL CONTENERDOR DEL BANNER*/
+/*ESTILOS DEL CONTENDOR DE LA FACTURA*/
+.factura{
+  grid-area: factura;
+  width: 100%;
+}
+
+
+
+/* FIN DE LOS ESTILOS DEL CONTENDOR DE LA FACTURA*/
+  
+}

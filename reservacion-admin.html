@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reservaciones.css">
+    <link rel="stylesheet" href="./css/menu-administradores.css">
+    <link rel="stylesheet" href="./css/menu-lateral-tlfn-administrador.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <!-- CARGA DE INFORMACION DE FOMRA DINAMICA-->
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script src="./js/datos.js"></script>
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function(e) {
+            CargarSelects("horas_reserva");
+        });
+    </script>
+    <!-- FIN DE CARGA DE INFORMACION DE FORMA DINAMICA -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head> 
+<body>
+    <header class="encabezado">
+        <div class="header">
+            <div class="btn-menu">
+                <label for="btn-menu"> ☰ </label>
+            </div>
+            <div class="logo">
+                <h1> <img src="img/logo.png" ></h1>
+            </div>
+            <nav class="menu">
+                <div class="div-menu">
+                  
+                  <a href="https://www.instagram.com/antojitos.streetfood/?hl=es"> <img src="img/instagram.svg" > </a>
+                  <a href="https://api.whatsapp.com/send?phone=5804264930465&text=Holaaa!%20Antojitos%20"> <img src="img/ws.svg"> </a>
+                </div>
+            </nav>
+        </div>
+        
+    </header>
+    <!------------------------MENU LATERAL--------------------------------->
+    <div class="menu-lateral">
+        <a href=""> <img src="./img/inicio-admi.png"></a> 
+        <a href=""> <img src="./img/menu-admi.png"></a> 
+        <a href=""> <img src="./img/reser-admi.png"></a> 
+        <a href=""> <img src="./img/eventos-admi.png"></a> 
+        <a href=""> <img src="./img/contac-admi.png"></a> 
+        <a href=""> <img src="./img/reservas-admi.png"></a> 
+        <a href=""> <img src="./img/clientes-admi.png"></a> 
+       
+    </div>
+
+    <!-----------------------MENU TELEFONOS ---------------------------------->
+    <div class="capa"></div>
+    <!------------------------------------->
+ <input class="check" type="checkbox" id="btn-menu">
+ <div class="container-menu">
+	<div class="cont-menu">
+		<nav>
+			<a href=""> <img src="./img/inicio-admi.png"></a> 
+            <a href=""> <img src="./img/menu-admi.png"></a> 
+            <a href=""> <img src="./img/reser-admi.png"></a> 
+            <a href=""> <img src="./img/eventos-admi.png"></a> 
+            <a href=""> <img src="./img/contac-admi.png"></a> 
+            <a href=""> <img src="./img/reservas-admi.png"></a> 
+            <a href=""> <img src="./img/clientes-admi.png"></a> 
+ 
+		</nav>
+		<label for="btn-menu">✖️</label>
+	</div> 
+ </div> 
+ <!------------------------CONTENEDOR-MADRE------------------------------>
+ <div class="contenedor">
+        <div id=" datos-reservacion" class="datosreservation">
+            <div class="ingrese-datos">
+                <h2>Ingrese datos para la reservacion:</h2>
+            </div>
+         <div class="contenedor-datos">
+                <div class="datos1">
+                    <div class="cedula"><p>Cedula</p>
+                    <input type="text" id="cedula" ></div>
+                    <div class="nombre"><p>Nombre</p>
+                    <input type="text" id="nombre"></div>
+                    <div class="apellido"><p>Apellido</p>
+                    <input type="text" id="apellido"></div>
+                    <div class="telefono"><p>Telefono</p>
+                    <input type="text" id="telefono"></div>
+                </div>
+                <div class="datos2">
+                    <div class="fecha"><p>Fecha</p>
+                    <input class="input-fecha" type="date" id="fecha" min="2022-01-01" max="2030-12-31"></div>
+                    <div class="hora"><p>Hora</p>
+                    <select class="select-hora" name="hora" id="horas_reserva"></select>
+                </div>   
+         </div>
+         </div>
+      </div>
+         <div id="datos-mesas" class="datosmesa">
+            <div class="seleccione">
+              <p><b><u>SELECCIONE MESA</u></b></p>  
+            </div>
+            
+            <div id="num-mesas" class="num-mesas">
+             <div class="contenedor-1">
+              <img src="./img/icons/vector-mesa 1.svg" class="mesas" height="70px" width="70px">
+              <img src="./img/icons/vector-mesa 2.svg"class="mesas" height="70px" width="70px">
+              <img src="./img/icons/vector-mesa 3.svg"class="mesas" height="70px" width="70px">
+              <img src="./img/icons/vector-mesa 4.svg" class="mesas" height="70px" width="70px">  
+             </div>   
+             <div class="contenedor-2">
+              <img src="./img/icons/vector-mesa 5.svg"class="mesas" height="70px" width="70px">
+              <img src="./img/icons/vector-mesa 6.svg" class="mesas" height="70px" width="70px">
+              <img src="./img/icons/vector-mesa 7.svg" class="mesas" height="70px" width="70px">
+              <img src="./img/icons/vector-mesa 8.svg" class="mesas" height="70px" width="70px">  
+             </div>
+             <div class="contenedor-3">
+               <img src="./img/icons/vector-mesa 9.svg" class="mesas" height="100px" width="100px">
+               <img src="./img/icons/vector-mesa 10.svg" class="mesas" height="100px" width="100px"> 
+             </div>
+                
+            </div>
+         </div>
+
+         <div id="factura"class="factura"> 
+            <div class="boton-descarga-factura"> <img src="./img/icons/boton-descarga.svg" width="30px" height="30px"></div>
+            <div class="datos-factura">
+             <label for="">Gisnel Garcia</label>
+             <label for="">Tlfn:0426-4930465</label>
+             <label for="">C.I:29.589.516</label>
+             <label for="">Fecha:02/04/2022</label>
+             <label for="">Hora:7:30pm</label>
+             <label for="">Mesa:</label>
+             <div class="x-mesa">Cuadro</div>
+             <label for="" class="codigo">Codigo:M-A4-3492</label>
+            </div>
+        
+         </div>
+    
+         <div ide="banner" class="banner"> 
+            <img src="./img/Group 24.png" class="img-banner">
+          </div>
+        
+    </div>
+</body>
+</html>

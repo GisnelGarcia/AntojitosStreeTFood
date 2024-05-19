@@ -1,0 +1,32 @@
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.menu-lateral{
+	grid-area: menu-lateral;
+	width: 200px;
+	height: 90vh;
+	padding-top: 105px;
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	
+  }
+  .menu-lateral a{
+	width: 175px;
+	height: 20%;
+  }
+  .menu-lateral a img{
+	width: 175px;
+	height:100% ;
+	
+  }
+  
+  @media (max-width: 780px){
+
+	.menu-lateral{
+		display: none;
+	}
+
+  }

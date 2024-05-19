@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/menu-lateral-tlfn.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script src="./js/datos.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("a#reservar").on("click",function(){
+                ValidaMenu();
+            });
+        })
+    </script>
+</head>
+<body>
+    <header class="encabezado">
+        <div class="header">
+            <div class="btn-menu">
+                <label for="btn-menu"> ☰ </label>
+            </div>
+            <div class="logo">
+                <h1> <img src="img/logo.png" ></h1> 
+            </div>
+            <nav class="menu">
+                <div class="div-menu">
+                  <a href="./inicio-sesion.html"> Inicio de sesión </a>
+                  <a href="https://www.instagram.com/antojitos.streetfood/?hl=es"> <img src="img/instagram.svg" > </a>
+                  <a href="https://api.whatsapp.com/send?phone=5804264930465&text=Holaaa!%20Antojitos%20"> <img src="img/ws.svg"> </a>
+                </div>
+            </nav>
+        </div> 
+      </header>
+     <!-----------------------MENU TELEFONOS ---------------------------------->
+  <div class="capa"></div>
+  <!------------------------------------->
+  <input class="check" type="checkbox" id="btn-menu">
+  <div class="container-menu">
+    <div class="cont-menu">
+     <nav>
+       <a href="./index.html"><img src="./img/Group 49 ini.png"></a>
+       <a href="./menu.html"><img src="./img/Group 46 559595mg menu.png"></a>
+       <a href="./eventos.html"><img src="./img/Group 47 event.png"></a>
+       <a href="./contactos.html"><img src="./img/Group 50 img cont.png"></a>
+       <a id="reservar"> <img src="./img/Group 48  reserv.png"></a>
+    </nav>
+     <label for="btn-menu">✖️</label>
+    </div> 
+  </div>
+      <!-----------------CONTENEDOR MADRE -------------------->
+      <div id="contenedor-madre" class="contenedor-madre">
+        <div class="menu-principal">
+            <a href="./menu.html"> <img src="./img/imagen-menu.png"> </a>
+            <a  href="" id="reservar"> <img src="./img/Group reserv.png"> </a>
+            <a href="./eventos.html"> <img src="./img/Group event.png"> </a>
+            <a href="./contactos.html"> <img src="./img/Group contac.png"> </a>
+        </div>
+        <div class="conocenos">
+            <div>....</div>
+            <h2>CONOCENOS</h2>
+            <div>....</div>
+        </div>
+        <div class="informacion">
+            <p>Antojitos Streed Food fundado el 09 de septiembre del 2021; siendo esta una empresa familiar en la que cada día perfeccionamos nuestras recetas logrando así distinguirnos de otros restaurantes. <br> <br>
+             Nuestros sabores, calidad y atención son los que nos posicionan en los más altos estándares.  <br> <br> 
+              <b>Nuestra meta:</b> Causar una explosión de sabores en cada platillo para así satisfacer los antojos de cada uno de nuestros clientes logrando ir mas allá de sus expectativas. <br><br> 
+              <b>Nuestro compromiso:</b> Brindar el mejor servicio y atención, para lograr una experiencia maravillosa que se deseea repetir. <br><br> 
+              Contamos con un gran equipo dotado de: </p>
+              <img src="./img/Group trabajadores.png" >
+              <p> <br> para poder crecer cada día hasta alcanzar mucho más de lo soñado.</p>
+        </div>
+        <div class="redes">
+            <div>....</div>
+            <h2>REDES SOCIALES</h2>
+            <div>....</div> 
+        </div>
+        <div class="redes-sociales">
+            <div class="iconos">
+                <div class="instagram">
+                    <img src="./img/icons/intagram.svg" width="50px" height="50px">
+                    <p>@antojitos.streedfood</p>
+                </div>
+                <div class="wss">
+                    <img src="./img/icons/wss.svg" width="50px" height="50px">
+                    <p>0412-9191468</p>
+                </div>
+            </div>
+            
+        </div>
+            <div class="publicidad">
+                <a href=""> <img src="./img/Group 69.png" ></a>
+            </div>
+
+
+
+    </div>
+</body>
+</html>
